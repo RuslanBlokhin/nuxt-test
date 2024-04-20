@@ -5,5 +5,6 @@ export default withNuxt({
   // files: ['**/*.ts', '**/*.tsx'],
   rules: {
     'no-console': 'off', // allow console.log in TypeScript files
+    'vue/no-multiple-template-root': 'off',
   },
 });

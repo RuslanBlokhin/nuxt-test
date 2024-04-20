@@ -1,0 +1,31 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+//   padding: 20px 10px;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 960px;
+    min-width: 728px;
+    // padding: 36px 20px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1138px) {
+  .container {
+    max-width: 1048px;
+    // padding: 36px 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1160px;
+    max-width: none;
+    // padding: 32px 216px 103px;
+  }
+}

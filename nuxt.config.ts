@@ -19,9 +19,34 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/favicon.ico' },
+        { rel: 'stylesheets', href: '/assets/favicon.ico' },
       ],
     },
   },
+  css: ['~/assets/css/global.scss', '~/assets/css/container.scss'],
   devtools: { enabled: true },
-  modules: ['@vite-pwa/nuxt', '@nuxt/eslint'],
+  modules: [
+    '@vite-pwa/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/image',
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          Jost: [300, 400, 500],
+        },
+        preload: true,
+      },
+    ],
+  ],
+  image: {
+    // format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
+    screens: {
+      sm: 320,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1440,
+    },
+  },
 });
