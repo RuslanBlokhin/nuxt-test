@@ -34,6 +34,7 @@
     height: 34.35px;
   }
   &__label-text {
+    font-family: 'QuinqueFive', sans-serif;
     width: 136.52px;
     color: #baff24;
     font-size: 15px;

@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
+    'nuxt-gtag',
     [
       '@nuxtjs/google-fonts',
       {
@@ -48,5 +49,8 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1440,
     },
+  },
+  gtag: {
+    id: 'G-JQ16R7NP2L',
   },
 });
