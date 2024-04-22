@@ -1,0 +1,112 @@
+<template>
+  <li :id="product.id" class="product-card">
+    <div class="product-card__selling-text">{{ product.sellingText }}</div>
+    <div class="product-card__wrapper">
+      <div class="product-card__title-block">
+        <div class="product-card__image">
+          <NuxtImg format="svg" :src="product.image" />
+        </div>
+        <div class="product-card__name-block">
+          <h2 class="product-card__name">{{ product.offerName }}</h2>
+          <p class="product-card__documents">{{ product.documents }}</p>
+        </div>
+      </div>
+      <ul class="product-card__conditions">
+        <li class="product-card__condition-item">
+          <div class="product-card__condition-value">{{ product.sum }}</div>
+          <div class="product-card__condition-name">сумма</div>
+        </li>
+        <li class="product-card__condition-item">
+          <div class="product-card__condition-value">{{ product.percent }}</div>
+          <div class="product-card__condition-name">ставка</div>
+        </li>
+        <li class="product-card__condition-item">
+          <div class="product-card__condition-value">от 21 года</div>
+          <div class="product-card__condition-name">возраст</div>
+        </li>
+      </ul>
+      <button type="button" class="product-card__request-btn">Заполнить заявку</button>
+    </div>
+  </li>
+</template>
+
+<script setup lang="ts">
+import type IProduct from '~/models/product.model';
+const { product } = defineProps<{
+  product: IProduct;
+}>();
+</script>
+
+<style lang="scss">
+.product-card {
+  padding-top: 8px;
+  border-radius: 30px;
+  background-color: #343839;
+
+  &__selling-text {
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1;
+  }
+  &__wrapper {
+    padding: 8px;
+    border-radius: 30px;
+    background-color: #232627;
+  }
+  &__title-block {
+    margin-bottom: 32px;
+    display: flex;
+    align-items: flex-end;
+    column-gap: 16px;
+  }
+  &__image {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 30px;
+  }
+  &__name {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+  &__documents {
+    text-transform: lowercase;
+    color: rgba($color: #fff, $alpha: 0.5);
+  }
+  &__conditions {
+    margin-bottom: 32px;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  &__condition-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  &__condition-value {
+    font-size: 20px;
+    line-height: 140%;
+  }
+  &__condition-name {
+    color: rgba($color: #fff, $alpha: 0.2);
+  }
+  &__request-btn {
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    color: #141718;
+    background-color: #baff24;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+</style>

@@ -1,31 +1,67 @@
 <template>
   <div class="main">
     <div class="main__hero">
-      <h1 class="main__title">Займы на карту онлайн от ведущих МФО</h1>
-      <div class="main__description">
-        <p class="main__description--gray">
-          Для получения большей суммы, обращайтесь в разные мфо.
-        </p>
-        <p class="main__description--white">
-          Заполнение двух и более заявок гарантирует получение требуемой суммы!
-        </p>
+      <div class="main__title-block">
+        <h1 class="main__title">Займы на карту онлайн от ведущих МФО</h1>
+        <div class="main__description">
+          <p class="main__description--gray">
+            Для получения большей суммы, обращайтесь в разные мфо.
+          </p>
+          <p class="main__description--white">
+            Заполнение двух и более заявок гарантирует получение требуемой суммы!
+          </p>
+        </div>
+      </div>
+      <div class="main__hero-image">
+        <NuxtImg format="png" src="/coins.png" />
       </div>
     </div>
-    <div class="main__hero-image">
-      <NuxtImg format="png" src="/coins.png" />
-    </div>
+    <ul v-if="products" class="main__products-list">
+      <ProductCard v-for="p in products" :key="p.id" :product="p" />
+    </ul>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type IProduct from '~/models/product.model';
+
+interface IResponce {
+  ok: boolean;
+  data: {
+    domain: string;
+    comment: string;
+    autoSortOffers: boolean;
+    offers: Array<IProduct>;
+    created: number;
+    id: string;
+    updated: number;
+    legalAddress: string;
+    name: string;
+    ogrnip: number;
+    tin: number;
+  };
+}
+
+const { data: products } = await useFetch('https://config-tool.ru/front.json', {
+  transform(data: IResponce) {
+    return data.data.offers;
+  },
+});
+console.log(products);
+
+// const productsData = computed((): Array<IProduct> => products.value.data.offers);
+// console.log(productsData.value);
+</script>
 
 <style lang="scss">
 .main {
-  display: flex;
-  align-items: center;
-  column-gap: 90px;
-
   &__hero {
+    margin-bottom: 68px;
+    display: flex;
+    align-items: flex-end;
+    column-gap: 90px;
+  }
+  &__title {
     width: 660px;
   }
   &__title {
@@ -50,6 +86,38 @@
   &__hero-image {
     min-width: 384px;
     width: 384px;
+  }
+  &__products-list {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    .main {
+      &__products-list {
+        grid-template-columns: repeat(2, 49%);
+      }
+    }
+  }
+  @media screen and (min-width: 1138px) {
+    .main {
+      &__products-list {
+        max-width: 1098px;
+        grid-template-columns: repeat(3, 33%);
+      }
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .main {
+      &__products-list {
+        max-width: none;
+        grid-template-columns: repeat(4, 278px);
+        column-gap: 16px;
+        row-gap: 32px;
+      }
+    }
   }
 }
 </style>

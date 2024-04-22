@@ -22,6 +22,8 @@
     "@nuxt/eslint": "^0.3.8",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@vite-pwa/nuxt": "^0.6.0",
-    "eslint": "^8.57.0"
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "vue-tsc": "^1.8.27"
   }
 }
