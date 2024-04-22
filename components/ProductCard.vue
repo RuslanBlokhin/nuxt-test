@@ -4,7 +4,7 @@
     <div class="product-card__wrapper">
       <div class="product-card__title-block">
         <div class="product-card__image">
-          <NuxtImg format="svg" :src="product.image" />
+          <NuxtImg format="svg" :src="imgURL" />
         </div>
         <div class="product-card__name-block">
           <h2 class="product-card__name">{{ product.offerName }}</h2>
@@ -35,6 +35,12 @@ import type IProduct from '~/models/product.model';
 const { product } = defineProps<{
   product: IProduct;
 }>();
+
+const imgURL = ref(createDynamicURL(product.image));
+
+function createDynamicURL(url: string): string {
+  return new URL(url, import.meta.url).href;
+}
 </script>
 
 <style lang="scss">
