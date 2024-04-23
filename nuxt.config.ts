@@ -29,13 +29,14 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     'nuxt-gtag',
-    [
-      '@rkaliev/nuxtjs-yandex-metrika',
-      {
-        id: process.env.YM_ID,
-        // webvisor: true,
-      },
-    ],
+    process.env.NODE_ENV === 'production'
+      ? [
+          '@rkaliev/nuxtjs-yandex-metrika',
+          {
+            id: process.env.YM_ID,
+          },
+        ]
+      : '',
     [
       '@nuxtjs/google-fonts',
       {

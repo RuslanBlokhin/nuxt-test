@@ -50,7 +50,10 @@ const { product } = defineProps<{
 // }
 
 function clickRequestBtnHandler() {
-  this.$yandexMetrika(process.env.YM_ID, 'reachGoal', '1');
+  console.log(process.env.NODE_ENV);
+
+  if (process.env.NODE_ENV === 'production')
+    this.$yandexMetrika(process.env.YM_ID, 'reachGoal', '1');
   navigateTo(product.link);
 }
 </script>
