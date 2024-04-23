@@ -84,7 +84,7 @@ function clickRequestBtnHandler() {
   }
   &__wrapper {
     width: 100%;
-    height: 336px;
+    height: 342px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -109,16 +109,19 @@ function clickRequestBtnHandler() {
     background-color: #fff;
     border-radius: 30px;
   }
+
   &__name {
     margin-bottom: 8px;
     font-size: 16px;
     font-weight: 500;
     line-height: 130%;
   }
+
   &__documents {
     text-transform: lowercase;
     color: #8e8e8e;
   }
+
   &__conditions {
     height: 100px;
     margin-bottom: 32px;
@@ -127,18 +130,22 @@ function clickRequestBtnHandler() {
     flex-direction: column;
     row-gap: 16px;
   }
+
   &__condition-item {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
   }
+
   &__condition-value {
     font-size: 20px;
     line-height: 140%;
   }
+
   &__condition-name {
     color: #575757;
   }
+
   &__request-btn {
     display: flex;
     align-items: center;

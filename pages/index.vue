@@ -55,33 +55,23 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
     return data.data.offers;
   },
 });
-
-// const productsData = computed((): Array<IProduct> => products.value.data.offers);
-// console.log(productsData.value);
 </script>
 
 <style lang="scss">
 .main {
   &__hero {
-    height: 378px;
-    margin-bottom: 68px;
-    display: flex;
-    align-items: center;
-    column-gap: 90px;
+    margin-bottom: 30px;
   }
+
   &__title {
-    width: 660px;
-  }
-  &__title {
-    margin: 70px 0 10px;
+    margin: 20px 0 10px;
     font-family: 'Jost', sans-serif;
     font-weight: 300;
-    font-size: 64px;
-    line-height: 76.8px;
+    font-size: 24px;
+    line-height: 1;
   }
   &__description {
-    font-size: 24px;
-    line-height: 31.2px;
+    font-size: 16px;
 
     &--gray {
       color: rgba(255, 255, 255, 0.5);
@@ -92,9 +82,7 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
     }
   }
   &__hero-image {
-    min-width: 384px;
-    width: 384px;
-    height: 378px;
+    display: none;
   }
   &__products-list {
     display: grid;
@@ -103,23 +91,53 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
     column-gap: 20px;
     row-gap: 20px;
   }
+
   @media screen and (min-width: 768px) {
     .main {
+      &__title {
+        font-size: 32px;
+      }
       &__products-list {
         grid-template-columns: repeat(2, 49%);
       }
     }
   }
-  @media screen and (min-width: 1138px) {
+
+  @media screen and (min-width: 960px) {
     .main {
       &__products-list {
-        max-width: 1098px;
-        grid-template-columns: repeat(3, 33%);
+        grid-template-columns: repeat(3, 32%);
       }
     }
   }
+
   @media screen and (min-width: 1440px) {
     .main {
+      &__hero {
+        height: 378px;
+        margin-bottom: 68px;
+        display: flex;
+        align-items: center;
+        column-gap: 90px;
+      }
+      &__title-block {
+        width: 660px;
+      }
+      &__title {
+        margin: 70px 0 10px;
+        font-size: 64px;
+        line-height: 76.8px;
+      }
+      &__description {
+        font-size: 24px;
+        line-height: 31.2px;
+      }
+      &__hero-image {
+        display: block;
+        min-width: 384px;
+        width: 384px;
+        height: 378px;
+      }
       &__products-list {
         max-width: none;
         grid-template-columns: repeat(4, 278px);
