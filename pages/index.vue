@@ -63,6 +63,7 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
 <style lang="scss">
 .main {
   &__hero {
+    height: 378px;
     margin-bottom: 68px;
     display: flex;
     align-items: center;

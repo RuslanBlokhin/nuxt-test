@@ -120,6 +120,7 @@ function clickRequestBtnHandler() {
     color: #8e8e8e;
   }
   &__conditions {
+    height: 100px;
     margin-bottom: 32px;
     padding: 0 8px;
     display: flex;
