@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import browserslist from 'browserslist';
+import { resolveToEsbuildTarget } from 'esbuild-plugin-browserslist';
 export default defineNuxtConfig({
   app: {
     head: {
@@ -87,7 +89,6 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
-    'nuxt-gtag',
     [
       '@nuxtjs/google-fonts',
       {
@@ -108,7 +109,18 @@ export default defineNuxtConfig({
       xxl: 1440,
     },
   },
-  gtag: {
-    id: 'G-JQ16R7NP2L',
+  vite: {
+    build: {
+      target: getBuildTarget([
+        '>0.1% and supports es6-module and not ios < 12 and not opera > 0',
+        'node >= 18.13.0',
+      ]),
+    },
   },
 });
+
+function getBuildTarget(browsers: Array<string>) {
+  return resolveToEsbuildTarget(browserslist(browsers), {
+    printUnknownTargets: false,
+  });
+}

@@ -4,7 +4,7 @@
     <div class="product-card__wrapper">
       <div class="product-card__title-block">
         <div class="product-card__image">
-          <NuxtImg format="svg" :src="product.image" />
+          <NuxtImg width="80" height="80" format="svg" :src="product.image" />
         </div>
         <div class="product-card__name-block">
           <h2 class="product-card__name">{{ product.sellingText }}</h2>
@@ -63,6 +63,7 @@ function clickRequestBtnHandler() {
 
 <style lang="scss">
 .product-card {
+  height: 372px;
   padding-top: 8px;
   border-radius: 30px;
   background-color: #343839;
@@ -87,8 +88,8 @@ function clickRequestBtnHandler() {
   &__image {
     min-width: 80px;
     width: 80px;
-    padding: 5px;
     height: 80px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;

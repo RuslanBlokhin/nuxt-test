@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="main__hero-image">
-        <NuxtImg format="png" src="/coins.png" />
+        <NuxtImg format="webp" width="384" height="378" src="/coins.png" />
       </div>
     </div>
     <ul v-if="products" class="main__products-list">
@@ -85,6 +85,7 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
   &__hero-image {
     min-width: 384px;
     width: 384px;
+    height: 378px;
   }
   &__products-list {
     display: grid;
