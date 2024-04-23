@@ -5,20 +5,52 @@ export default defineNuxtConfig({
       title: 'Срочные займы на карту онлайн от ведущих МФО',
       meta: [
         {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=5',
+        },
+        {
           name: 'description',
           content:
             'Возьми срочный онлайн заём сейчас. Нужен только паспорт! Без лишних проверок. Быстро. Удобно. Онлайн. Круглосуточно, без праздников и выходных.',
         },
         { name: 'keywords', content: 'займ на карту онлайн, только паспорт, мфо' },
         { name: 'theme-color', content: '#fff' },
+        { name: 'application-name', content: 'zaim nakarty' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'name="application-name', content: 'zaim nakarty' },
+        { name: 'apple-mobile-web-app-title', content: 'zaim nakarty' },
+        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+        { name: 'msapplication-starturl', content: 'https://offers-test.netlify.app/' },
+        { property: 'og:site_name', content: 'https://offers-test.netlify.app/' },
+        { property: 'og:url', content: 'https://offers-test.netlify.app/' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:image', content: 'https://offers-test.netlify.app/coins.png' },
+        { property: 'og:image:width', content: '384' },
+        { property: 'og:image:height', content: '378' },
+        { property: 'og:title', content: 'Срочные займы на карту онлайн от ведущих МФО' },
+        {
+          property: 'og:description',
+          content:
+            'Возьми срочный онлайн заём сейчас. Нужен только паспорт! Без лишних проверок. Быстро. Удобно. Онлайн. Круглосуточно, без праздников и выходных.',
+        },
+        { property: 'vk:image', content: 'https://offers-test.netlify.app/coins.png' },
+        { property: 'twitter:site', content: 'https://offers-test.netlify.app' },
+        { property: 'twitter:title', content: 'Срочные займы на карту онлайн от ведущих МФО' },
+        {
+          property: 'twitter:description',
+          content:
+            'Возьми срочный онлайн заём сейчас. Нужен только паспорт! Без лишних проверок. Быстро. Удобно. Онлайн. Круглосуточно, без праздников и выходных.',
+        },
+        { property: 'twitter:card', content: 'summary_large_image' },
+        { property: 'twitter:image', content: 'https://offers-test.netlify.app/coins.png' },
+        { property: 'twitter:url', content: 'https://offers-test.netlify.app' },
         { 'http-equiv': 'Content-type', content: 'text/html;charset=windows-1251' },
         { 'http-equiv': 'Content-language', content: 'ru' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/favicon.ico' },
+        { rel: 'manifest', href: '/manifest.json' },
       ],
       script: [
         {
@@ -67,7 +99,7 @@ export default defineNuxtConfig({
     ],
   ],
   image: {
-    // format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
+    format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
     screens: {
       sm: 320,
       md: 768,
