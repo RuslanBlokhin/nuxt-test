@@ -4,7 +4,7 @@
     <div class="product-card__wrapper">
       <div class="product-card__title-block">
         <div class="product-card__image">
-          <CldImage alt="product" width="80" height="80" format="svg" :src="product.image" />
+          <NuxtImg :src="product.image" width="80" height="80" format="svg" alt="product" />
         </div>
         <div class="product-card__name-block">
           <h2 class="product-card__name">{{ product.sellingText }}</h2>

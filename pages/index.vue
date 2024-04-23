@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="main__hero-image">
-        <CldImage alt="coins" format="webp" width="384" height="378" src="/coins.png" />
+        <NuxtImg src="/coins.png" format="webp" width="384" height="378" alt="coins" />
       </div>
     </div>
     <ul v-if="products" class="main__products-list">
@@ -57,7 +57,7 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
   &__hero {
     margin-bottom: 68px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     column-gap: 90px;
   }
   &__title {

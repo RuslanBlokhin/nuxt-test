@@ -3,7 +3,7 @@
     <div class="header__wrapper">
       <div class="header__label">
         <div class="header__label-image">
-          <CldImage alt="union" width="34.35" height="34.35" format="svg" src="/union.svg" />
+          <NuxtImg src="/union.svg" width="34.35" height="34.35" format="svg" alt="union" />
         </div>
         <div class="header__label-text">zaim nakarty</div>
       </div>
@@ -24,7 +24,7 @@
   }
   &__label {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 9px;
     margin-top: 32px;
   }
@@ -38,6 +38,7 @@
     width: 136.52px;
     color: #baff24;
     font-size: 15px;
+    line-height: 18.78px;
   }
 }
 </style>
