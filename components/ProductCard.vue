@@ -39,19 +39,25 @@
 
 <script setup lang="ts">
 import type IProduct from '~/models/product.model';
+import type IYm from '~/models/ym.model';
 const { product } = defineProps<{
   product: IProduct;
 }>();
 
-// const imgURL = ref(createDynamicURL(product.image));
-
-// function createDynamicURL(url: string): string {
-//   return new URL(url, import.meta.url).href;
-// }
+declare global {
+  interface Window {
+    ym: IYm;
+  }
+}
 
 function clickRequestBtnHandler() {
-  ym(process.env.YM_ID, 'reachGoal', '1');
-  navigateTo(product.link);
+  window.ym(97100842, 'reachGoal', '1');
+  navigateTo(product.link, {
+    external: true,
+    open: {
+      target: '_blank',
+    },
+  });
 }
 </script>
 
