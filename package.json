@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.5.0",
-    "@nuxtjs/cloudinary": "^2.7.3",
     "esbuild-plugin-browserslist": "^0.11.1",
     "nuxt": "^3.11.2",
     "sass": "^1.75.0",

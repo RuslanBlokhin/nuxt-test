@@ -92,12 +92,6 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
-    // [
-    //   '@nuxtjs/cloudinary',
-    //   {
-    //     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-    //   },
-    // ],
     [
       '@nuxtjs/google-fonts',
       {
