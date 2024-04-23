@@ -30,6 +30,13 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-gtag',
     [
+      '@rkaliev/nuxtjs-yandex-metrika',
+      {
+        id: process.env.YM_ID,
+        // webvisor: true,
+      },
+    ],
+    [
       '@nuxtjs/google-fonts',
       {
         families: {

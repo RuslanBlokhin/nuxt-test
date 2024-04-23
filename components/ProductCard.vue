@@ -4,10 +4,10 @@
     <div class="product-card__wrapper">
       <div class="product-card__title-block">
         <div class="product-card__image">
-          <NuxtImg format="svg" :src="imgURL" />
+          <NuxtImg format="svg" :src="product.image" />
         </div>
         <div class="product-card__name-block">
-          <h2 class="product-card__name">{{ product.offerName }}</h2>
+          <h2 class="product-card__name">{{ product.sellingText }}</h2>
           <p class="product-card__documents">{{ product.documents }}</p>
         </div>
       </div>
@@ -25,7 +25,14 @@
           <div class="product-card__condition-name">возраст</div>
         </li>
       </ul>
-      <button type="button" class="product-card__request-btn">Заполнить заявку</button>
+      <button
+        type="button"
+        target="_blank"
+        class="product-card__request-btn"
+        @click="clickRequestBtnHandler"
+      >
+        Заполнить заявку
+      </button>
     </div>
   </li>
 </template>
@@ -36,10 +43,15 @@ const { product } = defineProps<{
   product: IProduct;
 }>();
 
-const imgURL = ref(createDynamicURL(product.image));
+// const imgURL = ref(createDynamicURL(product.image));
 
-function createDynamicURL(url: string): string {
-  return new URL(url, import.meta.url).href;
+// function createDynamicURL(url: string): string {
+//   return new URL(url, import.meta.url).href;
+// }
+
+function clickRequestBtnHandler() {
+  this.$yandexMetrika(process.env.YM_ID, 'reachGoal', '1');
+  navigateTo(product.link);
 }
 </script>
 
@@ -69,6 +81,7 @@ function createDynamicURL(url: string): string {
   &__image {
     min-width: 80px;
     width: 80px;
+    padding: 5px;
     height: 80px;
     display: flex;
     align-items: center;
@@ -106,6 +119,9 @@ function createDynamicURL(url: string): string {
     color: rgba($color: #fff, $alpha: 0.2);
   }
   &__request-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     border-radius: 30px;

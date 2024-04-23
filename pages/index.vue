@@ -47,7 +47,6 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
     return data.data.offers;
   },
 });
-console.log(products);
 
 // const productsData = computed((): Array<IProduct> => products.value.data.offers);
 // console.log(productsData.value);
