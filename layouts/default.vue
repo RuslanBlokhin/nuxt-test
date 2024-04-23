@@ -3,7 +3,7 @@
     <div class="header__wrapper">
       <div class="header__label">
         <div class="header__label-image">
-          <NuxtImg format="svg" src="/union.svg" />
+          <CldImage alt="union" width="34.35" height="34.35" format="svg" src="/union.svg" />
         </div>
         <div class="header__label-text">zaim nakarty</div>
       </div>

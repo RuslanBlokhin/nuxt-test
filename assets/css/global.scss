@@ -1,6 +1,7 @@
 @font-face {
   font-family: "QuinqueFive";
     src: url("../fonts/QuinqueFive.woff");
+    font-display: fallback;
     src: local('☺'), 
     url("../fonts/QuinqueFive.woff") format("woff2"),
     url("../fonts/QuinqueFive.ttf") format("truetype");
@@ -21,7 +22,7 @@ body {
   min-height: 100vh;
   background-color: #14151c;
   color: #fff;
-  
+
   a {
     color: var(--gray-text-color);
     text-decoration: inherit;

@@ -4,6 +4,9 @@ import { resolveToEsbuildTarget } from 'esbuild-plugin-browserslist';
 export default defineNuxtConfig({
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'ru',
+      },
       title: 'Срочные займы на карту онлайн от ведущих МФО',
       meta: [
         {
@@ -89,6 +92,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
     '@nuxt/image',
+    '@nuxtjs/cloudinary',
     [
       '@nuxtjs/google-fonts',
       {
