@@ -13,7 +13,15 @@
         </div>
       </div>
       <div class="main__hero-image">
-        <NuxtImg src="/coins.png" format="webp" width="384" height="378" alt="coins" />
+        <NuxtImg
+          src="/coins.png"
+          format="webp"
+          width="384"
+          height="378"
+          alt="coins"
+          loading="lazy"
+          preload
+        />
       </div>
     </div>
     <ul v-if="products" class="main__products-list">

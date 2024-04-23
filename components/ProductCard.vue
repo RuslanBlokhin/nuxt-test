@@ -4,7 +4,15 @@
     <div class="product-card__wrapper">
       <div class="product-card__title-block">
         <div class="product-card__image">
-          <NuxtImg :src="product.image" width="80" height="80" format="svg" alt="product" />
+          <NuxtImg
+            :src="product.image"
+            width="80"
+            height="80"
+            format="svg"
+            alt="product"
+            loading="lazy"
+            preload
+          />
         </div>
         <div class="product-card__name-block">
           <h2 class="product-card__name">{{ product.sellingText }}</h2>
@@ -77,6 +85,9 @@ function clickRequestBtnHandler() {
   &__wrapper {
     width: 100%;
     height: 336px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 8px;
     border-radius: 30px;
     background-color: #232627;

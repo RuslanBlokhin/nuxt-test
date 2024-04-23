@@ -3,7 +3,15 @@
     <div class="header__wrapper">
       <div class="header__label">
         <div class="header__label-image">
-          <NuxtImg src="/union.svg" width="34.35" height="34.35" format="svg" alt="union" />
+          <NuxtImg
+            src="/union.svg"
+            width="34"
+            height="34"
+            format="svg"
+            alt="union"
+            loading="lazy"
+            preload
+          />
         </div>
         <div class="header__label-text">zaim nakarty</div>
       </div>
@@ -29,9 +37,9 @@
     margin-top: 32px;
   }
   &__label-image {
-    min-width: 34.35px;
-    width: 34.35px;
-    height: 34.35px;
+    min-width: 34px;
+    width: 34px;
+    height: 34px;
   }
   &__label-text {
     font-family: 'QuinqueFive', sans-serif;
