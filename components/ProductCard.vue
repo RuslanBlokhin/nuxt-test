@@ -115,7 +115,6 @@ function clickRequestBtnHandler() {
   }
 
   &__conditions {
-    height: 100px;
     margin-bottom: 32px;
     padding: 0 8px;
     display: flex;
