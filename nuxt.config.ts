@@ -55,7 +55,7 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/favicon.ico' },
-        { rel: 'manifest', href: '/manifest.json' },
+        // { rel: 'manifest', href: 'public/manifest.json' },
       ],
       script: [
         {
@@ -86,9 +86,53 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  nitro: {
+    compressPublicAssets: true,
+  },
+  pwa: {
+    manifest: {
+      name: 'Срочные займы на карту онлайн от ведущих МФО',
+      lang: 'ru',
+      short_name: 'zaim nakarty',
+      description:
+        'Возьми срочный онлайн заём сейчас. Нужен только паспорт! Без лишних проверок. Быстро. Удобно. Онлайн. Круглосуточно, без праздников и выходных.',
+      start_url: '/',
+      scope: '/',
+      display: 'standalone',
+      theme_color: '#14151c',
+      background_color: '#14151c',
+      orientation: 'any',
+      icons: [
+        {
+          src: '/coins.png',
+          sizes: '384x378',
+        },
+      ],
+    },
+  },
   css: ['~/assets/css/global.scss', '~/assets/css/container.scss', '~/assets/css/fonts.scss'],
   devtools: { enabled: true },
-  modules: ['@vite-pwa/nuxt', '@nuxt/eslint', '@nuxt/image'],
+  modules: [
+    '@vite-pwa/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/image',
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          Jost: [300, 400, 500],
+        },
+        preload: true,
+      },
+    ],
+    [
+      'nuxt-delay-hydration',
+      {
+        mode: 'init',
+      },
+    ],
+  ],
   image: {
     format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
     screens: {
@@ -98,7 +142,6 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1440,
     },
-    provider: 'netlify',
   },
   vite: {
     build: {

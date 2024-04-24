@@ -61,7 +61,6 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
 
   &__title {
     margin: 20px 0 10px;
-    font-family: 'jost-light', sans-serif;
     font-weight: 300;
     font-size: 24px;
     line-height: 1;
@@ -69,7 +68,6 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
 
   &__description {
     font-size: 16px;
-    font-family: 'jost-light', sans-serif;
 
     &--gray {
       color: rgba(255, 255, 255, 0.5);

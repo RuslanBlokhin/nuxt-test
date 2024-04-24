@@ -1,38 +1,11 @@
 @font-face {
     font-family: "QuinqueFive";
     src: url("../fonts/QuinqueFive.woff");
-    font-display: fallback;
+    font-display: swap;
     src: local('☺'), 
     url("../fonts/QuinqueFive.woff") format("woff2"),
     url("../fonts/QuinqueFive.ttf") format("truetype");
 
     font-weight: 400;
     font-style: normal;
-}
-@font-face {
-    font-family: 'jost-light';
-    font-style: normal;
-    font-weight: 300;
-    src: url('../fonts/jost-light-russian.woff2') format('woff2'),
-        url('../fonts/jost-light-russian.woff') format('woff'),
-        url('../fonts/jost-light-russian.ttf') format('truetype');
-    unicode-range: U+21-23,U+25-5F,U+61-7E,U+AB,U+BB,U+401,U+410-44F,U+451,U+2013,U+2014,U+2018,U+2019,U+201C-201E,U+2026,U+20BD;
-}
-@font-face {
-    font-family: 'jost-medium';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/jost-medium-russian.woff2') format('woff2'),
-        url('../fonts/jost-medium-russian.woff') format('woff'),
-        url('../fonts/jost-medium-russian.ttf') format('truetype');
-    unicode-range: U+21-23,U+25-5F,U+61-7E,U+AB,U+BB,U+401,U+410-44F,U+451,U+2013,U+2014,U+2018,U+2019,U+201C-201E,U+2026,U+20BD;
-}
-@font-face {
-    font-family: 'jost-regular';
-    font-style: normal;
-    font-weight: 500;
-    src: url('../fonts/jost-regular-russian.woff2') format('woff2'),
-        url('../fonts/jost-regular-russian.woff') format('woff'),
-        url('../fonts/jost-regular-russian.ttf') format('truetype');
-    unicode-range: U+21-23,U+25-5F,U+61-7E,U+AB,U+BB,U+401,U+410-44F,U+451,U+2013,U+2014,U+2018,U+2019,U+201C-201E,U+2026,U+20BD;
 }
