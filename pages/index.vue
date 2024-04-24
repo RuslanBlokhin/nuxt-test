@@ -13,15 +13,7 @@
         </div>
       </div>
       <div class="main__hero-image">
-        <NuxtImg
-          src="/coins.png"
-          format="webp"
-          width="384"
-          height="378"
-          alt="coins"
-          loading="lazy"
-          preload
-        />
+        <NuxtImg src="/coins.png" format="webp" width="384" height="378" alt="coins" preload />
       </div>
     </div>
     <ul v-if="products" class="main__products-list">
@@ -63,15 +55,21 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
     margin-bottom: 30px;
   }
 
+  &__title-block {
+    height: 148px;
+  }
+
   &__title {
     margin: 20px 0 10px;
-    font-family: 'Jost', sans-serif;
+    font-family: 'jost-light', sans-serif;
     font-weight: 300;
     font-size: 24px;
     line-height: 1;
   }
+
   &__description {
     font-size: 16px;
+    font-family: 'jost-light', sans-serif;
 
     &--gray {
       color: rgba(255, 255, 255, 0.5);
@@ -81,9 +79,11 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
       font-weight: 400;
     }
   }
+
   &__hero-image {
     display: none;
   }
+
   &__products-list {
     display: grid;
     grid-template-columns: repeat(1, 100%);
@@ -97,6 +97,7 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
       &__title {
         font-size: 32px;
       }
+
       &__products-list {
         grid-template-columns: repeat(2, 49%);
       }
@@ -118,26 +119,31 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
         margin-bottom: 68px;
         display: flex;
         align-items: center;
-        column-gap: 90px;
+        column-gap: 74px;
       }
+
       &__title-block {
-        width: 660px;
+        height: 378px;
       }
+
       &__title {
         margin: 70px 0 10px;
         font-size: 64px;
         line-height: 76.8px;
       }
+
       &__description {
         font-size: 24px;
         line-height: 31.2px;
       }
+
       &__hero-image {
         display: block;
         min-width: 384px;
         width: 384px;
         height: 378px;
       }
+
       &__products-list {
         max-width: none;
         grid-template-columns: repeat(4, 278px);

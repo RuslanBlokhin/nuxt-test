@@ -3,15 +3,7 @@
     <div class="header__wrapper">
       <div class="header__label">
         <div class="header__label-image">
-          <NuxtImg
-            src="/union.svg"
-            width="34"
-            height="34"
-            format="svg"
-            alt="union"
-            loading="lazy"
-            preload
-          />
+          <NuxtImg src="/union.svg" width="37.5" height="37.5" format="svg" alt="union" preload />
         </div>
         <div class="header__label-text">zaim nakarty</div>
       </div>
@@ -27,20 +19,21 @@
 <style lang="scss">
 .header {
   padding: 0 10px;
+  height: 37.5px;
   max-width: 500px;
   margin: 0 auto;
 
   &__label {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 9px;
     margin-top: 20px;
   }
 
   &__label-image {
-    min-width: 34px;
-    width: 34px;
-    height: 34px;
+    min-width: 37.5px;
+    width: 37.5px;
+    height: 37.5px;
   }
 
   &__label-text {

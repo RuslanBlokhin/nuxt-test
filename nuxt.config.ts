@@ -86,22 +86,9 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ['~/assets/css/global.scss', '~/assets/css/container.scss'],
+  css: ['~/assets/css/global.scss', '~/assets/css/container.scss', '~/assets/css/fonts.scss'],
   devtools: { enabled: true },
-  modules: [
-    '@vite-pwa/nuxt',
-    '@nuxt/eslint',
-    '@nuxt/image',
-    [
-      '@nuxtjs/google-fonts',
-      {
-        families: {
-          Jost: [300, 400, 500],
-        },
-        preload: true,
-      },
-    ],
-  ],
+  modules: ['@vite-pwa/nuxt', '@nuxt/eslint', '@nuxt/image'],
   image: {
     format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
     screens: {
