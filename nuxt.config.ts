@@ -98,6 +98,7 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1440,
     },
+    provider: 'netlify',
   },
   vite: {
     build: {
