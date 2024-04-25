@@ -101,7 +101,7 @@ function clickRequestBtnHandler() {
   &__image {
     min-width: 80px;
     width: 80px;
-    height: auto;
+    height: 80px;
     padding: 5px;
     display: flex;
     align-items: center;

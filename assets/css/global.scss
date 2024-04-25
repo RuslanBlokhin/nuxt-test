@@ -2,7 +2,6 @@
 @font-face {
   font-family: "QuinqueFive";
   src: url("../fonts/QuinqueFive.woff");
-  font-display: optional;
   src: local('☺'), 
   url("../fonts/QuinqueFive.woff") format("woff2"),
   url("../fonts/QuinqueFive.ttf") format("truetype");
@@ -20,7 +19,7 @@ body {
   font-weight: 400;
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #14151c;
   color: #fff;
 

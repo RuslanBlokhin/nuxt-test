@@ -75,6 +75,7 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
   }
 
   &__title {
+    width: 300px;
     margin: 20px 0 10px;
     font-weight: 300;
     font-size: 24px;
@@ -113,6 +114,7 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
       }
 
       &__title {
+        width: 100%;
         font-size: 32px;
       }
 
