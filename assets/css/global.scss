@@ -1,4 +1,15 @@
+@import '~/node_modules/modern-normalize/modern-normalize.css';
+@font-face {
+  font-family: "QuinqueFive";
+  src: url("../fonts/QuinqueFive.woff");
+  font-display: swap;
+  src: local('☺'), 
+  url("../fonts/QuinqueFive.woff") format("woff2"),
+  url("../fonts/QuinqueFive.ttf") format("truetype");
 
+  font-weight: 400;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
@@ -64,11 +75,31 @@ body {
     height: auto;
   }
 }
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  padding: 0 10px 20px;
+  font-size: 14px;
+}
 
 @media screen and (min-width: 768px) {
-
+  .container {
+    width: 100%;
+    max-width: 960px;
+    min-width: 728px;
+    padding: 0 20px 30px;
+    font-size: 16px;
+  }
 }
+
 @media screen and (min-width: 1440px) {
-
+  .container {
+    width: 1160px;
+    max-width: none;
+    padding: 32px 0 60px;
+  }
 }
+
 

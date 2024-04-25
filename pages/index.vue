@@ -92,6 +92,11 @@ const { data: products } = await useFetch('https://config-tool.ru/front.json', {
 
   @media screen and (min-width: 768px) {
     .main {
+      &__title-block {
+        height: auto;
+        width: fit-content;
+      }
+
       &__title {
         font-size: 32px;
       }

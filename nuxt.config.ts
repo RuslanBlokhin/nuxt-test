@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import browserslist from 'browserslist';
-import { resolveToEsbuildTarget } from 'esbuild-plugin-browserslist';
+// import browserslist from 'browserslist';
+// import { resolveToEsbuildTarget } from 'esbuild-plugin-browserslist';
 export default defineNuxtConfig({
   app: {
     head: {
@@ -8,6 +8,7 @@ export default defineNuxtConfig({
         lang: 'ru',
       },
       title: 'Срочные займы на карту онлайн от ведущих МФО',
+
       meta: [
         {
           name: 'viewport',
@@ -55,6 +56,8 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/favicon.ico' },
+        { rel: 'preconnect', href: 'https://offers-test.netlify.app/' },
+        { rel: 'dns-prefetch', href: 'https://offers-test.netlify.app/' },
       ],
       script: [
         {
@@ -83,7 +86,7 @@ export default defineNuxtConfig({
                     (k.src = r),
                     a.parentNode.insertBefore(k, a);
                 })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
-                window.ym($${Number(process.env.YM_ID)}, 'init', {
+                window.ym(${Number(process.env.YM_ID)}, 'init', {
                   clickmap: true,
                   trackLinks: true,
                   accurateTrackBounce: true,
@@ -103,10 +106,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  nitro: {
-    compressPublicAssets: true,
-  },
+  css: ['~/assets/css/global.scss'],
   pwa: {
     manifest: {
       name: 'Срочные займы на карту онлайн от ведущих МФО',
@@ -128,7 +128,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ['~/assets/css/global.scss', '~/assets/css/container.scss', '~/assets/css/fonts.scss'],
   devtools: { enabled: false },
   modules: [
     '@vite-pwa/nuxt',
@@ -160,18 +159,18 @@ export default defineNuxtConfig({
       xxl: 1440,
     },
   },
-  vite: {
-    build: {
-      target: getBuildTarget([
-        '>0.1% and supports es6-module and not ios < 12 and not opera > 0',
-        'node >= 18.13.0',
-      ]),
-    },
-  },
+  // vite: {
+  //   build: {
+  //     target: getBuildTarget([
+  //       '>0.1% and supports es6-module and not ios < 12 and not opera > 0',
+  //       'node >= 18.13.0',
+  //     ]),
+  //   },
+  // },
 });
 
-function getBuildTarget(browsers: Array<string>) {
-  return resolveToEsbuildTarget(browserslist(browsers), {
-    printUnknownTargets: false,
-  });
-}
+// function getBuildTarget(browsers: Array<string>) {
+//   return resolveToEsbuildTarget(browserslist(browsers), {
+//     printUnknownTargets: false,
+//   });
+// }

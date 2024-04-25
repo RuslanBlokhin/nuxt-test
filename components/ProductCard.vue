@@ -85,7 +85,6 @@ function clickRequestBtnHandler() {
     background-color: #232627;
   }
   &__title-block {
-    margin-bottom: 32px;
     display: flex;
     align-items: flex-end;
     column-gap: 16px;
@@ -115,7 +114,6 @@ function clickRequestBtnHandler() {
   }
 
   &__conditions {
-    margin-bottom: 32px;
     padding: 0 8px;
     display: flex;
     flex-direction: column;
