@@ -107,27 +107,6 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/global.scss'],
-  pwa: {
-    manifest: {
-      name: 'Срочные займы на карту онлайн от ведущих МФО',
-      lang: 'ru',
-      short_name: 'zaim nakarty',
-      description:
-        'Возьми срочный онлайн заём сейчас. Нужен только паспорт! Без лишних проверок. Быстро. Удобно. Онлайн. Круглосуточно, без праздников и выходных.',
-      start_url: '/',
-      scope: '/',
-      display: 'standalone',
-      theme_color: '#14151c',
-      background_color: '#14151c',
-      orientation: 'any',
-      icons: [
-        {
-          src: '/coins.png',
-          sizes: '384x378',
-        },
-      ],
-    },
-  },
   devtools: { enabled: false },
   modules: [
     '@vite-pwa/nuxt',
@@ -149,6 +128,31 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  pwa: {
+    manifest: {
+      name: 'Срочные займы на карту онлайн от ведущих МФО',
+      lang: 'ru',
+      short_name: 'zaim nakarty',
+      description:
+        'Возьми срочный онлайн заём сейчас. Нужен только паспорт! Без лишних проверок. Быстро. Удобно. Онлайн. Круглосуточно, без праздников и выходных.',
+      start_url: '/',
+      scope: '/',
+      display: 'standalone',
+      theme_color: '#14151c',
+      background_color: '#14151c',
+      orientation: 'any',
+      icons: [
+        {
+          src: '/coins.png',
+          sizes: '384x378',
+        },
+        {
+          src: '/coins.png',
+          sizes: '512x512',
+        },
+      ],
+    },
+  },
   image: {
     format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
     screens: {
