@@ -2,7 +2,7 @@
 @font-face {
   font-family: "QuinqueFive";
   src: url("../fonts/QuinqueFive.woff");
-  font-display: fallback;
+  font-display: optional;
   src: local('☺'), 
   url("../fonts/QuinqueFive.woff") format("woff2"),
   url("../fonts/QuinqueFive.ttf") format("truetype");
