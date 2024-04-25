@@ -2,7 +2,7 @@
 @font-face {
   font-family: "QuinqueFive";
   src: url("../fonts/QuinqueFive.woff");
-  font-display: swap;
+  font-display: fallback;
   src: local('☺'), 
   url("../fonts/QuinqueFive.woff") format("woff2"),
   url("../fonts/QuinqueFive.ttf") format("truetype");
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Jost', Arial, sans-serif;
   font-weight: 400;
   margin: 0;
   min-width: 320px;
