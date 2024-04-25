@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-// import browserslist from 'browserslist';
-// import { resolveToEsbuildTarget } from 'esbuild-plugin-browserslist';
+import browserslist from 'browserslist';
+import { resolveToEsbuildTarget } from 'esbuild-plugin-browserslist';
 export default defineNuxtConfig({
   app: {
     head: {
@@ -26,11 +26,11 @@ export default defineNuxtConfig({
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-title', content: 'zaim nakarty' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-        { name: 'msapplication-starturl', content: 'https://offers-test.netlify.app/' },
-        { property: 'og:site_name', content: 'https://offers-test.netlify.app/' },
-        { property: 'og:url', content: 'https://offers-test.netlify.app/' },
+        { name: 'msapplication-starturl', content: 'https://offers-nuxt-test.vercel.app/' },
+        { property: 'og:site_name', content: 'https://offers-nuxt-test.vercel.app/' },
+        { property: 'og:url', content: 'https://offers-nuxt-test.vercel.app/' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:image', content: 'https://offers-test.netlify.app/coins.png' },
+        { property: 'og:image', content: 'https://offers-nuxt-test.vercel.app/coins.png' },
         { property: 'og:image:width', content: '384' },
         { property: 'og:image:height', content: '378' },
         { property: 'og:title', content: 'Срочные займы на карту онлайн от ведущих МФО' },
@@ -39,7 +39,7 @@ export default defineNuxtConfig({
           content:
             'Возьми срочный онлайн заём сейчас. Нужен только паспорт! Без лишних проверок. Быстро. Удобно. Онлайн. Круглосуточно, без праздников и выходных.',
         },
-        { property: 'vk:image', content: 'https://offers-test.netlify.app/coins.png' },
+        { property: 'vk:image', content: 'https://offers-nuxt-test.vercel.app/coins.png' },
         { property: 'twitter:site', content: 'https://offers-test.netlify.app' },
         { property: 'twitter:title', content: 'Срочные займы на карту онлайн от ведущих МФО' },
         {
@@ -48,7 +48,7 @@ export default defineNuxtConfig({
             'Возьми срочный онлайн заём сейчас. Нужен только паспорт! Без лишних проверок. Быстро. Удобно. Онлайн. Круглосуточно, без праздников и выходных.',
         },
         { property: 'twitter:card', content: 'summary_large_image' },
-        { property: 'twitter:image', content: 'https://offers-test.netlify.app/coins.png' },
+        { property: 'twitter:image', content: 'https://offers-nuxt-test.vercel.app/coins.png' },
         { property: 'twitter:url', content: 'https://offers-test.netlify.app' },
         { 'http-equiv': 'Content-type', content: 'text/html;charset=windows-1251' },
         { 'http-equiv': 'Content-language', content: 'ru' },
@@ -56,8 +56,9 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/favicon.ico' },
-        { rel: 'preconnect', href: 'https://offers-test.netlify.app/' },
-        { rel: 'dns-prefetch', href: 'https://offers-test.netlify.app/' },
+        { rel: 'preconnect', href: 'https://offers-nuxt-test.vercel.app/' },
+        { rel: 'dns-prefetch', href: 'https://offers-nuxt-test.vercel.app/' },
+        { rel: 'manifest', href: '/manifest.webmanifest' },
       ],
       script: [
         {
@@ -145,6 +146,7 @@ export default defineNuxtConfig({
         {
           src: '/coins.png',
           sizes: '384x378',
+          purpose: 'maskable',
         },
         {
           src: '/coins.png',
@@ -163,18 +165,18 @@ export default defineNuxtConfig({
       xxl: 1440,
     },
   },
-  // vite: {
-  //   build: {
-  //     target: getBuildTarget([
-  //       '>0.1% and supports es6-module and not ios < 12 and not opera > 0',
-  //       'node >= 18.13.0',
-  //     ]),
-  //   },
-  // },
+  vite: {
+    build: {
+      target: getBuildTarget([
+        '>0.1% and supports es6-module and not ios < 12 and not opera > 0',
+        'node >= 18.13.0',
+      ]),
+    },
+  },
 });
 
-// function getBuildTarget(browsers: Array<string>) {
-//   return resolveToEsbuildTarget(browserslist(browsers), {
-//     printUnknownTargets: false,
-//   });
-// }
+function getBuildTarget(browsers: Array<string>) {
+  return resolveToEsbuildTarget(browserslist(browsers), {
+    printUnknownTargets: false,
+  });
+}

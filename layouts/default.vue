@@ -39,6 +39,7 @@
   &__label-text {
     font-family: 'QuinqueFive', sans-serif;
     width: 136.52px;
+    height: 37.5px;
     color: #baff24;
     font-size: 15px;
     line-height: 18.78px;

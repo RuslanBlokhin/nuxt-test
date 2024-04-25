@@ -2,7 +2,7 @@
   <div class="main">
     <div class="main__hero">
       <div class="main__title-block">
-        <h1 class="main__title">Займы на карту онлайн от ведущих МФО</h1>
+        <h1 preload class="main__title">Займы на карту онлайн от ведущих МФО</h1>
         <div class="main__description">
           <p class="main__description--gray">
             Для получения большей суммы, обращайтесь в разные мфо.
