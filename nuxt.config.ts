@@ -122,14 +122,15 @@ export default defineNuxtConfig({
         preload: true,
       },
     ],
-    [
-      'nuxt-delay-hydration',
-      {
-        mode: 'init',
-      },
-    ],
   ],
   pwa: {
+    registerType: 'autoUpdate',
+    injectRegister: 'inline',
+    strategies: 'generateSW',
+    workbox: {
+      globPatterns: ['**/*.{js,css}'],
+      navigateFallback: null,
+    },
     manifest: {
       name: 'Срочные займы на карту онлайн от ведущих МФО',
       lang: 'ru',

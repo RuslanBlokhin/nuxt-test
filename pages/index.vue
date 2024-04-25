@@ -44,7 +44,22 @@ interface IResponce {
 
 const { data: products } = await useFetch('https://config-tool.ru/front.json', {
   transform(data: IResponce) {
-    return data.data.offers;
+    const array = data.data.offers;
+
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   },
 });
 </script>
